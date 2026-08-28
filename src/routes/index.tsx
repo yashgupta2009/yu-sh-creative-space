@@ -1,15 +1,16 @@
 import { createFileRoute } from "@tanstack/react-router";
+import resumeAsset from "../assets/resume.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Yush Gupta — Personal Portfolio" },
+      { title: "Yash Gupta — Personal Portfolio" },
       {
         name: "description",
         content:
-          "Personal portfolio of Yush Gupta — senior at Northview High School, 3DE by Junior Achievement magnet program member, passionate about engineering, business, and technology.",
+          "Personal portfolio of Yash Gupta — senior at Northview High School, 3DE by Junior Achievement magnet program member, passionate about engineering, business, and technology.",
       },
-      { property: "og:title", content: "Yush Gupta — Personal Portfolio" },
+      { property: "og:title", content: "Yash Gupta — Personal Portfolio" },
       {
         property: "og:description",
         content:
@@ -24,6 +25,7 @@ export const Route = createFileRoute("/")({
 
 const NAV_ITEMS = [
   { label: "About me", href: "#about" },
+  { label: "Resume", href: "#resume" },
   { label: "Academics", href: "#academics" },
   { label: "Expertise", href: "#expertise" },
   { label: "Creative", href: "#creative" },
@@ -88,7 +90,7 @@ function ClipboardCard() {
             Literally the best person ever
           </p>
           <div className="mx-auto mt-5 flex h-36 w-28 items-center justify-center border-2 border-ink">
-            <span className="font-hand text-5xl text-ink">Yush</span>
+            <span className="font-hand text-5xl text-ink">Yash</span>
           </div>
           <div className="mt-6 space-y-4 text-left">
             {[
@@ -119,7 +121,7 @@ function Index() {
       <header className="mx-auto flex max-w-4xl flex-col items-center px-6 py-24 text-center md:py-32">
         <p className="font-hand text-4xl md:text-5xl">Welcome to my</p>
         <h1 className="font-display mt-4 text-6xl font-bold tracking-tight md:text-8xl">
-          Yush Gupta
+          Yash Gupta
         </h1>
         <p className="font-body mt-6 text-xl text-muted-foreground md:text-2xl">
           Personal Portfolio — Engineering, Business &amp; Technology
@@ -142,7 +144,7 @@ function Index() {
             <h2 className="font-hand text-6xl md:text-7xl">Hey there!</h2>
             <div className="font-body mt-8 space-y-6 text-lg leading-relaxed">
               <p>
-                My name is Yush Gupta, and I am currently a senior at Northview
+                My name is Yash Gupta, and I am currently a senior at Northview
                 High School and a member of the 3DE by Junior Achievement
                 magnet program. From a young age, I have always been interested
                 in building things with my hands and creating ideas that could
@@ -185,10 +187,118 @@ function Index() {
 
       <NavBar />
 
-      {/* Academics — white section */}
-      <section id="academics" className="bg-paper py-24">
+      {/* Resume — white section */}
+      <section id="resume" className="bg-paper py-24">
         <div className="mx-auto max-w-6xl px-6">
-          <SectionHeading>Academic Experience</SectionHeading>
+          <SectionHeading>Resume</SectionHeading>
+          <div className="mt-16 grid items-start gap-16 md:grid-cols-2">
+            {/* resume image */}
+            <figure className="mx-auto w-full max-w-md">
+              <div className="rotate-[-1deg] border-2 border-ink bg-paper p-3 shadow-xl transition-transform hover:rotate-0">
+                <img
+                  src={resumeAsset.url}
+                  alt="Yash Gupta's resume"
+                  className="w-full"
+                />
+              </div>
+              <figcaption className="font-hand mt-6 text-center text-3xl">
+                my resume, hot off the press
+              </figcaption>
+            </figure>
+
+            {/* resume highlights */}
+            <div className="space-y-10">
+              <div>
+                <h3 className="font-hand text-4xl">Profile</h3>
+                <p className="font-body mt-3 leading-relaxed text-muted-foreground">
+                  Motivated and dependable student with strong leadership,
+                  communication, and organizational skills. Known for being
+                  consistent, detail-oriented, and determined in achieving
+                  goals. Eager to learn new skills, take on challenges, and
+                  continue improving through experience.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="font-hand text-4xl">Experience</h3>
+                <div className="font-body mt-3 space-y-5 leading-relaxed text-muted-foreground">
+                  <div>
+                    <p className="font-display text-xl font-semibold text-ink">
+                      Broadcasthub
+                    </p>
+                    <p className="mt-1">
+                      Worked with professional camera equipment to support
+                      media production and broadcasting. Assisted with sales by
+                      engaging with clients, explaining services, and helping
+                      drive business growth through effective communication.
+                    </p>
+                  </div>
+                  <div>
+                    <p className="font-display text-xl font-semibold text-ink">
+                      Leadership
+                    </p>
+                    <p className="mt-1">
+                      Demonstrated leadership through group projects and
+                      presentations, earning recognition for excellence. Gained
+                      hands-on leadership experience through 3DE and by leading
+                      a student-run business, "Ball Boys."
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="grid gap-10 sm:grid-cols-2">
+                <div>
+                  <h3 className="font-hand text-4xl">Interests</h3>
+                  <ul className="font-body mt-3 list-disc space-y-1 pl-5 text-muted-foreground">
+                    <li>Entrepreneurship</li>
+                    <li>Business strategy</li>
+                    <li>Communication</li>
+                    <li>Sales</li>
+                    <li>Team leadership</li>
+                  </ul>
+                </div>
+                <div>
+                  <h3 className="font-hand text-4xl">Key Skills</h3>
+                  <ul className="font-body mt-3 list-disc space-y-1 pl-5 text-muted-foreground">
+                    <li>Communication</li>
+                    <li>Team leadership</li>
+                    <li>Organization</li>
+                    <li>Presentation skills</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div>
+                <h3 className="font-hand text-4xl">Education</h3>
+                <p className="font-body mt-3 leading-relaxed text-muted-foreground">
+                  2023–2027 · Northview High School, Duluth, Georgia
+                  <br />
+                  Relevant coursework: Intro to Business, Entrepreneurship,
+                  Engineering
+                </p>
+              </div>
+
+              <div>
+                <h3 className="font-hand text-4xl">Objective</h3>
+                <p className="font-body mt-3 leading-relaxed text-muted-foreground">
+                  Motivated high school student seeking opportunities to gain
+                  real-world work experience, develop professional skills, and
+                  build a strong foundation for future career success in
+                  business and entrepreneurship.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <NavBar dark />
+
+      {/* Academics — black section */}
+      <section id="academics" className="bg-ink py-24 text-paper">
+        <div className="mx-auto max-w-6xl px-6">
+          <SectionHeading dark>Academic Experience</SectionHeading>
           <div className="mt-16 grid gap-10 md:grid-cols-3">
             {[
               {
@@ -209,13 +319,13 @@ function Index() {
             ].map((card) => (
               <article
                 key={card.title}
-                className="border-2 border-ink bg-paper p-8 transition-transform hover:-translate-y-1"
+                className="border-2 border-paper p-8 transition-transform hover:-translate-y-1"
               >
                 <p className="font-hand text-2xl">{card.tag}</p>
                 <h3 className="font-display mt-2 text-2xl font-semibold">
                   {card.title}
                 </h3>
-                <p className="font-body mt-4 leading-relaxed text-muted-foreground">
+                <p className="font-body mt-4 leading-relaxed text-paper/70">
                   {card.body}
                 </p>
               </article>
@@ -224,12 +334,12 @@ function Index() {
         </div>
       </section>
 
-      <NavBar dark />
+      <NavBar />
 
-      {/* Expertise — black section */}
-      <section id="expertise" className="bg-ink py-24 text-paper">
+      {/* Expertise — white section */}
+      <section id="expertise" className="bg-paper py-24">
         <div className="mx-auto max-w-6xl px-6">
-          <SectionHeading dark>Expertise</SectionHeading>
+          <SectionHeading>Expertise</SectionHeading>
           <div className="mx-auto mt-16 grid max-w-4xl gap-x-16 gap-y-10 md:grid-cols-2">
             {[
               ["Leadership & Teamwork", "w-[90%]"],
@@ -243,33 +353,9 @@ function Index() {
                 <div className="flex items-baseline justify-between">
                   <span className="font-hand text-3xl">{skill}</span>
                 </div>
-                <div className="mt-2 h-1.5 w-full rounded-full bg-paper/20">
-                  <div className={`h-1.5 rounded-full bg-paper ${width}`} />
+                <div className="mt-2 h-1.5 w-full rounded-full bg-ink/10">
+                  <div className={`h-1.5 rounded-full bg-ink ${width}`} />
                 </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <NavBar />
-
-      {/* Creative — white section */}
-      <section id="creative" className="bg-paper py-24">
-        <div className="mx-auto max-w-4xl px-6 text-center">
-          <SectionHeading>Creative Side</SectionHeading>
-          <p className="font-body mx-auto mt-10 max-w-2xl text-lg leading-relaxed text-muted-foreground">
-            Photography and software let me explore both my logical and
-            creative sides — capturing moments worth remembering and building
-            ideas worth sharing.
-          </p>
-          <div className="mt-12 flex flex-wrap items-center justify-center gap-6">
-            {["Photography", "Software", "Building Things"].map((label) => (
-              <div
-                key={label}
-                className="flex h-44 w-44 rotate-[-2deg] items-center justify-center border-2 border-ink bg-paper shadow-md transition-transform hover:rotate-0"
-              >
-                <span className="font-hand text-3xl">{label}</span>
               </div>
             ))}
           </div>
@@ -278,21 +364,57 @@ function Index() {
 
       <NavBar dark />
 
-      {/* Contact — black section */}
-      <section id="contact" className="bg-ink py-24 text-paper">
+      {/* Creative — black section */}
+      <section id="creative" className="bg-ink py-24 text-paper">
+        <div className="mx-auto max-w-4xl px-6 text-center">
+          <SectionHeading dark>Creative Side</SectionHeading>
+          <p className="font-body mx-auto mt-10 max-w-2xl text-lg leading-relaxed text-paper/80">
+            Photography and software let me explore both my logical and
+            creative sides — capturing moments worth remembering and building
+            ideas worth sharing.
+          </p>
+          <div className="mt-12 flex flex-wrap items-center justify-center gap-6">
+            {["Photography", "Software", "Building Things"].map((label) => (
+              <div
+                key={label}
+                className="flex h-44 w-44 rotate-[-2deg] items-center justify-center border-2 border-ink bg-paper text-ink shadow-md transition-transform hover:rotate-0"
+              >
+                <span className="font-hand text-3xl">{label}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <NavBar />
+
+      {/* Contact — white section */}
+      <section id="contact" className="bg-paper py-24">
         <div className="mx-auto max-w-3xl px-6 text-center">
           <p className="font-hand text-5xl">Let's connect!</p>
           <h2 className="font-display mt-4 text-5xl font-semibold md:text-6xl">
             Get In Touch
           </h2>
-          <p className="font-body mt-8 text-lg leading-relaxed text-paper/80">
+          <p className="font-body mt-8 text-lg leading-relaxed text-muted-foreground">
             Every connection teaches me something new. Whether it's about
             engineering, business, technology, or just a great idea — I'd love
             to hear from you.
           </p>
+          <div className="font-body mt-10 space-y-2 text-lg">
+            <p>
+              <a
+                href="mailto:yashgupta20099@gmail.com"
+                className="underline underline-offset-4 transition-opacity hover:opacity-60"
+              >
+                yashgupta20099@gmail.com
+              </a>
+            </p>
+            <p>1 470-680-9848</p>
+            <p>10465 Grandview Square, Duluth, GA 30097</p>
+          </div>
           <a
-            href="mailto:yush.gupta@example.com"
-            className="font-hand mt-10 inline-block border-2 border-paper px-10 py-3 text-3xl transition-colors hover:bg-paper hover:text-ink"
+            href="mailto:yashgupta20099@gmail.com"
+            className="font-hand mt-10 inline-block border-2 border-ink px-10 py-3 text-3xl transition-colors hover:bg-ink hover:text-paper"
           >
             Say hello
           </a>
@@ -301,9 +423,9 @@ function Index() {
 
       {/* Footer */}
       <footer className="border-t border-border bg-paper py-10 text-center">
-        <p className="font-hand text-4xl">Yush Gupta</p>
+        <p className="font-hand text-4xl">Yash Gupta</p>
         <p className="font-body mt-2 text-sm text-muted-foreground">
-          © 2026 Yush Gupta — Personal Portfolio
+          © 2026 Yash Gupta — Personal Portfolio
         </p>
       </footer>
     </main>
