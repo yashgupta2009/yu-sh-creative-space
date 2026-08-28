@@ -145,6 +145,7 @@ function Index() {
         >
           scroll down ↓
         </a>
+        </div>
       </header>
 
       <NavBar dark />
