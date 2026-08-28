@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import resumeAsset from "../assets/resume.png.asset.json";
+import portraitAsset from "../assets/yash-portrait.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -89,8 +90,12 @@ function ClipboardCard() {
           <p className="mt-1 font-body text-xs tracking-widest text-muted-foreground uppercase">
             Literally the best person ever
           </p>
-          <div className="mx-auto mt-5 flex h-36 w-28 items-center justify-center border-2 border-ink">
-            <span className="font-hand text-5xl text-ink">Yash</span>
+          <div className="mx-auto mt-5 h-36 w-28 overflow-hidden border-2 border-ink">
+            <img
+              src={portraitAsset.url}
+              alt="Yash Gupta"
+              className="h-full w-full object-cover"
+            />
           </div>
           <div className="mt-6 space-y-4 text-left">
             {[
