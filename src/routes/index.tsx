@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import resumeAsset from "../assets/resume.png.asset.json";
 import portraitAsset from "../assets/yash-portrait.png.asset.json";
-import fabricAsset from "../assets/fabric-texture.jpg.asset.json";
+import babyAsset from "../assets/baby-years.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -126,11 +126,12 @@ function Index() {
       {/* Hero */}
       <header className="relative overflow-hidden">
         <img
-          src={fabricAsset.url}
+          src={babyAsset.url}
           alt=""
           aria-hidden="true"
-          className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-25 grayscale"
+          className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-40 grayscale"
         />
+        <div className="pointer-events-none absolute inset-0 bg-paper/50" />
         <div className="relative mx-auto flex max-w-4xl flex-col items-center px-6 py-24 text-center md:py-32">
         <p className="font-hand text-4xl md:text-5xl">Welcome to my</p>
         <h1 className="font-display mt-4 text-6xl font-bold tracking-tight md:text-8xl">
