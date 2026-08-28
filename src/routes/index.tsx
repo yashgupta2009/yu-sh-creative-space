@@ -129,9 +129,9 @@ function Index() {
           src={babyAsset.url}
           alt=""
           aria-hidden="true"
-          className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-40 grayscale"
+          className="pointer-events-none absolute inset-0 h-full w-full object-cover"
         />
-        <div className="pointer-events-none absolute inset-0 bg-paper/50" />
+        <div className="pointer-events-none absolute inset-0 bg-paper/25" />
         <div className="relative mx-auto flex max-w-4xl flex-col items-center px-6 py-24 text-center md:py-32">
         <p className="font-hand text-4xl md:text-5xl">Welcome to my</p>
         <h1 className="font-display mt-4 text-6xl font-bold tracking-tight md:text-8xl">
