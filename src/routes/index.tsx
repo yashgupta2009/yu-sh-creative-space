@@ -180,11 +180,19 @@ function Index() {
       <NavBar dark />
 
       {/* About me — black section */}
-      <section id="about" className="bg-ink py-24 text-paper">
-        <div className="mx-auto grid max-w-6xl items-center gap-16 px-6 md:grid-cols-[320px_1fr]">
+      <section id="about" className="grain-dark bg-ink py-24 text-paper">
+        <div className="relative mx-auto grid max-w-6xl items-center gap-16 px-6 md:grid-cols-[320px_1fr]">
           <ClipboardCard />
           <div>
-            <h2 className="font-hand text-6xl md:text-7xl">Hey there!</h2>
+            <span className="font-body text-[0.65rem] tracking-[0.5em] text-paper/50 uppercase">
+              Section 01 — About me
+            </span>
+            <h2 className="font-hand mt-3 text-6xl md:text-7xl">Hey there!</h2>
+            <span
+              aria-hidden="true"
+              className="mt-4 block h-[3px] w-24 -rotate-1 rounded-full bg-accent-warm"
+            />
+
             <div className="font-body mt-8 space-y-6 text-lg leading-relaxed">
               <p>
                 My name is Yash Gupta, and I am currently a senior at Northview
