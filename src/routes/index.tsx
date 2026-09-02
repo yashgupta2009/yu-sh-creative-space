@@ -450,11 +450,10 @@ function Index() {
 
       {/* Contact — white section */}
       <section id="contact" className="grain bg-paper py-24">
-        <div className="mx-auto max-w-3xl px-6 text-center">
-          <p className="font-hand text-5xl">Let's connect!</p>
-          <h2 className="font-display mt-4 text-5xl font-semibold md:text-6xl">
-            Get In Touch
-          </h2>
+        <div className="relative mx-auto max-w-3xl px-6 text-center">
+          <SectionHeading index="Section 06">Get In Touch</SectionHeading>
+          <p className="font-hand mt-6 text-4xl">Let's connect!</p>
+
           <p className="font-body mt-8 text-lg leading-relaxed text-muted-foreground">
             Every connection teaches me something new. Whether it's about
             engineering, business, technology, or just a great idea — I'd love
