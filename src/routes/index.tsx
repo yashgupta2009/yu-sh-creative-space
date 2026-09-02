@@ -342,7 +342,7 @@ function Index() {
       {/* Academics — black section */}
       <section id="academics" className="bg-ink py-24 text-paper">
         <div className="mx-auto max-w-6xl px-6">
-          <SectionHeading dark>Academic Experience</SectionHeading>
+          <SectionHeading index="Section 03" dark>Academic Experience</SectionHeading>
           <div className="mt-16 grid gap-10 md:grid-cols-3">
             {[
               {
@@ -381,9 +381,9 @@ function Index() {
       <NavBar />
 
       {/* Expertise — white section */}
-      <section id="expertise" className="bg-paper py-24">
+      <section id="expertise" className="grain bg-paper py-24">
         <div className="mx-auto max-w-6xl px-6">
-          <SectionHeading>Expertise</SectionHeading>
+          <SectionHeading index="Section 04">Expertise</SectionHeading>
           <div className="mx-auto mt-16 grid max-w-4xl gap-x-16 gap-y-10 md:grid-cols-2">
             {[
               ["Leadership & Teamwork", "w-[90%]"],
@@ -411,7 +411,7 @@ function Index() {
       {/* Creative — black section */}
       <section id="creative" className="bg-ink py-24 text-paper">
         <div className="mx-auto max-w-4xl px-6 text-center">
-          <SectionHeading dark>Creative Side</SectionHeading>
+          <SectionHeading index="Section 05" dark>Creative Side</SectionHeading>
           <p className="font-body mx-auto mt-10 max-w-2xl text-lg leading-relaxed text-paper/80">
             Photography and software let me explore both my logical and
             creative sides — capturing moments worth remembering and building
@@ -433,7 +433,7 @@ function Index() {
       <NavBar />
 
       {/* Contact — white section */}
-      <section id="contact" className="bg-paper py-24">
+      <section id="contact" className="grain bg-paper py-24">
         <div className="mx-auto max-w-3xl px-6 text-center">
           <p className="font-hand text-5xl">Let's connect!</p>
           <h2 className="font-display mt-4 text-5xl font-semibold md:text-6xl">
