@@ -356,7 +356,7 @@ function Index() {
       <NavBar dark />
 
       {/* Academics — black section */}
-      <section id="academics" className="bg-ink py-24 text-paper">
+      <section id="academics" className="grain-dark bg-ink py-24 text-paper">
         <div className="mx-auto max-w-6xl px-6">
           <SectionHeading index="Section 03" dark>Academic Experience</SectionHeading>
           <div className="mt-16 grid gap-10 md:grid-cols-3">
@@ -425,7 +425,7 @@ function Index() {
       <NavBar dark />
 
       {/* Creative — black section */}
-      <section id="creative" className="bg-ink py-24 text-paper">
+      <section id="creative" className="grain-dark bg-ink py-24 text-paper">
         <div className="mx-auto max-w-4xl px-6 text-center">
           <SectionHeading index="Section 05" dark>Creative Side</SectionHeading>
           <p className="font-body mx-auto mt-10 max-w-2xl text-lg leading-relaxed text-paper/80">
