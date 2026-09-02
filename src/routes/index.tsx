@@ -95,6 +95,18 @@ function SectionHeading({
   );
 }
 
+function SubHeading({ children }: { children: React.ReactNode }) {
+  return (
+    <div>
+      <h3 className="font-hand text-4xl">{children}</h3>
+      <span
+        aria-hidden="true"
+        className="mt-2 block h-[2px] w-12 -rotate-1 rounded-full bg-accent-warm"
+      />
+    </div>
+  );
+}
+
 
 function ClipboardCard() {
   return (
@@ -269,7 +281,7 @@ function Index() {
             {/* resume highlights */}
             <div className="space-y-10">
               <div>
-                <h3 className="font-hand text-4xl">Profile</h3>
+                <SubHeading>Profile</SubHeading>
                 <p className="font-body mt-3 leading-relaxed text-muted-foreground">
                   Motivated and dependable student with strong leadership,
                   communication, and organizational skills. Known for being
@@ -280,7 +292,7 @@ function Index() {
               </div>
 
               <div>
-                <h3 className="font-hand text-4xl">Experience</h3>
+                <SubHeading>Experience</SubHeading>
                 <div className="font-body mt-3 space-y-5 leading-relaxed text-muted-foreground">
                   <div>
                     <p className="font-display text-xl font-semibold text-ink">
@@ -309,7 +321,7 @@ function Index() {
 
               <div className="grid gap-10 sm:grid-cols-2">
                 <div>
-                  <h3 className="font-hand text-4xl">Interests</h3>
+                  <SubHeading>Interests</SubHeading>
                   <ul className="font-body mt-3 list-disc space-y-1 pl-5 text-muted-foreground">
                     <li>Entrepreneurship</li>
                     <li>Business strategy</li>
@@ -319,7 +331,7 @@ function Index() {
                   </ul>
                 </div>
                 <div>
-                  <h3 className="font-hand text-4xl">Key Skills</h3>
+                  <SubHeading>Key Skills</SubHeading>
                   <ul className="font-body mt-3 list-disc space-y-1 pl-5 text-muted-foreground">
                     <li>Communication</li>
                     <li>Team leadership</li>
@@ -330,7 +342,7 @@ function Index() {
               </div>
 
               <div>
-                <h3 className="font-hand text-4xl">Education</h3>
+                <SubHeading>Education</SubHeading>
                 <p className="font-body mt-3 leading-relaxed text-muted-foreground">
                   2023–2027 · Northview High School, Duluth, Georgia
                   <br />
@@ -340,7 +352,7 @@ function Index() {
               </div>
 
               <div>
-                <h3 className="font-hand text-4xl">Objective</h3>
+                <SubHeading>Objective</SubHeading>
                 <p className="font-body mt-3 leading-relaxed text-muted-foreground">
                   Motivated high school student seeking opportunities to gain
                   real-world work experience, develop professional skills, and
@@ -376,12 +388,17 @@ function Index() {
                 tag: "Real-World Experience",
                 body: "Contributing ideas and strategies to real businesses — turning classroom concepts into solutions that make an impact.",
               },
-            ].map((card) => (
+            ].map((card, i) => (
               <article
                 key={card.title}
-                className="border-2 border-paper p-8 transition-transform hover:-translate-y-1"
+                className={`relative border-2 border-paper p-8 transition-transform hover:-translate-y-1 hover:rotate-0 ${
+                  i % 2 === 0 ? "rotate-[-1deg]" : "rotate-[1deg]"
+                }`}
               >
-                <p className="font-hand text-2xl">{card.tag}</p>
+                <span className="font-body text-[0.6rem] tracking-[0.4em] text-paper/50 uppercase">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <p className="font-hand mt-2 text-2xl text-accent-warm">{card.tag}</p>
                 <h3 className="font-display mt-2 text-2xl font-semibold">
                   {card.title}
                 </h3>
@@ -389,6 +406,7 @@ function Index() {
                   {card.body}
                 </p>
               </article>
+
             ))}
           </div>
         </div>
@@ -408,16 +426,24 @@ function Index() {
               ["Business Strategy", "w-[85%]"],
               ["Software", "w-[82%]"],
               ["Photography", "w-[80%]"],
-            ].map(([skill, width]) => (
+            ].map(([skill, width], i) => (
               <div key={skill}>
                 <div className="flex items-baseline justify-between">
                   <span className="font-hand text-3xl">{skill}</span>
+                  <span className="font-body text-[0.6rem] tracking-[0.35em] text-muted-foreground uppercase">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
                 </div>
                 <div className="mt-2 h-1.5 w-full rounded-full bg-ink/10">
                   <div className={`h-1.5 rounded-full bg-ink ${width}`} />
                 </div>
+                <span
+                  aria-hidden="true"
+                  className="mt-1 block h-[3px] w-8 -rotate-1 rounded-full bg-accent-warm"
+                />
               </div>
             ))}
+
           </div>
         </div>
       </section>
@@ -434,14 +460,21 @@ function Index() {
             ideas worth sharing.
           </p>
           <div className="mt-12 flex flex-wrap items-center justify-center gap-6">
-            {["Photography", "Software", "Building Things"].map((label) => (
+            {["Photography", "Software", "Building Things"].map((label, i) => (
               <div
                 key={label}
-                className="flex h-44 w-44 rotate-[-2deg] items-center justify-center border-2 border-ink bg-paper text-ink shadow-md transition-transform hover:rotate-0"
+                className={`relative flex h-44 w-44 items-center justify-center border-2 border-ink bg-paper text-ink shadow-md transition-transform hover:rotate-0 ${
+                  i % 2 === 0 ? "rotate-[-2deg]" : "rotate-[2deg]"
+                }`}
               >
+                <span
+                  aria-hidden="true"
+                  className="tape -top-3 left-1/2 -translate-x-1/2 -rotate-3"
+                />
                 <span className="font-hand text-3xl">{label}</span>
               </div>
             ))}
+
           </div>
         </div>
       </section>
@@ -450,11 +483,10 @@ function Index() {
 
       {/* Contact — white section */}
       <section id="contact" className="grain bg-paper py-24">
-        <div className="mx-auto max-w-3xl px-6 text-center">
-          <p className="font-hand text-5xl">Let's connect!</p>
-          <h2 className="font-display mt-4 text-5xl font-semibold md:text-6xl">
-            Get In Touch
-          </h2>
+        <div className="relative mx-auto max-w-3xl px-6 text-center">
+          <SectionHeading index="Section 06">Get In Touch</SectionHeading>
+          <p className="font-hand mt-6 text-4xl">Let's connect!</p>
+
           <p className="font-body mt-8 text-lg leading-relaxed text-muted-foreground">
             Every connection teaches me something new. Whether it's about
             engineering, business, technology, or just a great idea — I'd love
@@ -482,12 +514,20 @@ function Index() {
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-border bg-paper py-10 text-center">
+      <footer className="grain border-t border-border bg-paper py-10 text-center">
+        <span
+          aria-hidden="true"
+          className="mx-auto mb-5 block h-[3px] w-16 -rotate-1 rounded-full bg-accent-warm"
+        />
         <p className="font-hand text-4xl">Yash Gupta</p>
-        <p className="font-body mt-2 text-sm text-muted-foreground">
+        <p className="font-body mt-2 text-[0.65rem] tracking-[0.4em] text-muted-foreground uppercase">
+          Engineering · Business · Technology
+        </p>
+        <p className="font-body mt-3 text-sm text-muted-foreground">
           © 2026 Yash Gupta — Personal Portfolio
         </p>
       </footer>
+
     </main>
   );
 }
