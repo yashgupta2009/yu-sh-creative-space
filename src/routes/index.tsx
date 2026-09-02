@@ -482,12 +482,20 @@ function Index() {
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-border bg-paper py-10 text-center">
+      <footer className="grain border-t border-border bg-paper py-10 text-center">
+        <span
+          aria-hidden="true"
+          className="mx-auto mb-5 block h-[3px] w-16 -rotate-1 rounded-full bg-accent-warm"
+        />
         <p className="font-hand text-4xl">Yash Gupta</p>
-        <p className="font-body mt-2 text-sm text-muted-foreground">
+        <p className="font-body mt-2 text-[0.65rem] tracking-[0.4em] text-muted-foreground uppercase">
+          Engineering · Business · Technology
+        </p>
+        <p className="font-body mt-3 text-sm text-muted-foreground">
           © 2026 Yash Gupta — Personal Portfolio
         </p>
       </footer>
+
     </main>
   );
 }
