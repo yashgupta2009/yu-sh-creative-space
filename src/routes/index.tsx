@@ -269,7 +269,7 @@ function Index() {
             {/* resume highlights */}
             <div className="space-y-10">
               <div>
-                <h3 className="font-hand text-4xl">Profile</h3>
+                <SubHeading>Profile</SubHeading>
                 <p className="font-body mt-3 leading-relaxed text-muted-foreground">
                   Motivated and dependable student with strong leadership,
                   communication, and organizational skills. Known for being
@@ -280,7 +280,7 @@ function Index() {
               </div>
 
               <div>
-                <h3 className="font-hand text-4xl">Experience</h3>
+                <SubHeading>Experience</SubHeading>
                 <div className="font-body mt-3 space-y-5 leading-relaxed text-muted-foreground">
                   <div>
                     <p className="font-display text-xl font-semibold text-ink">
@@ -309,7 +309,7 @@ function Index() {
 
               <div className="grid gap-10 sm:grid-cols-2">
                 <div>
-                  <h3 className="font-hand text-4xl">Interests</h3>
+                  <SubHeading>Interests</SubHeading>
                   <ul className="font-body mt-3 list-disc space-y-1 pl-5 text-muted-foreground">
                     <li>Entrepreneurship</li>
                     <li>Business strategy</li>
@@ -319,7 +319,7 @@ function Index() {
                   </ul>
                 </div>
                 <div>
-                  <h3 className="font-hand text-4xl">Key Skills</h3>
+                  <SubHeading>Key Skills</SubHeading>
                   <ul className="font-body mt-3 list-disc space-y-1 pl-5 text-muted-foreground">
                     <li>Communication</li>
                     <li>Team leadership</li>
@@ -330,7 +330,7 @@ function Index() {
               </div>
 
               <div>
-                <h3 className="font-hand text-4xl">Education</h3>
+                <SubHeading>Education</SubHeading>
                 <p className="font-body mt-3 leading-relaxed text-muted-foreground">
                   2023–2027 · Northview High School, Duluth, Georgia
                   <br />
@@ -340,7 +340,7 @@ function Index() {
               </div>
 
               <div>
-                <h3 className="font-hand text-4xl">Objective</h3>
+                <SubHeading>Objective</SubHeading>
                 <p className="font-body mt-3 leading-relaxed text-muted-foreground">
                   Motivated high school student seeking opportunities to gain
                   real-world work experience, develop professional skills, and
