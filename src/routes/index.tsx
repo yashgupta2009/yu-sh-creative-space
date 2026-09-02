@@ -95,6 +95,18 @@ function SectionHeading({
   );
 }
 
+function SubHeading({ children }: { children: React.ReactNode }) {
+  return (
+    <div>
+      <h3 className="font-hand text-4xl">{children}</h3>
+      <span
+        aria-hidden="true"
+        className="mt-2 block h-[2px] w-12 -rotate-1 rounded-full bg-accent-warm"
+      />
+    </div>
+  );
+}
+
 
 function ClipboardCard() {
   return (
