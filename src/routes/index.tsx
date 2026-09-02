@@ -144,7 +144,7 @@ function Index() {
       <NavBar />
 
       {/* Hero */}
-      <header className="relative overflow-hidden">
+      <header className="grain relative overflow-hidden">
         <img
           src={babyAsset.url}
           alt=""
