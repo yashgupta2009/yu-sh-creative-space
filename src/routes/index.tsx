@@ -40,15 +40,17 @@ function NavBar({ dark = false }: { dark?: boolean }) {
       className={
         dark
           ? "w-full bg-ink text-paper"
-          : "w-full border-b border-border bg-paper text-ink"
+          : "w-full border-y border-border bg-paper text-ink"
       }
     >
       <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-center gap-x-8 gap-y-2 px-6 py-4">
-        {NAV_ITEMS.map((item) => (
+        {NAV_ITEMS.map((item, i) => (
           <a
             key={item.href}
             href={item.href}
-            className="font-hand text-2xl transition-opacity hover:opacity-60"
+            className={`font-hand text-2xl transition-transform duration-200 hover:-translate-y-0.5 ${
+              i % 2 === 0 ? "hover:-rotate-3" : "hover:rotate-3"
+            }`}
           >
             {item.label}
           </a>
@@ -60,21 +62,39 @@ function NavBar({ dark = false }: { dark?: boolean }) {
 
 function SectionHeading({
   children,
+  index,
   dark = false,
 }: {
   children: React.ReactNode;
+  index?: string;
   dark?: boolean;
 }) {
   return (
-    <h2
-      className={`font-display text-center text-5xl font-semibold tracking-tight md:text-6xl ${
-        dark ? "text-paper" : "text-ink"
-      }`}
-    >
-      {children}
-    </h2>
+    <div className="flex flex-col items-center">
+      {index ? (
+        <span
+          className={`font-body text-[0.65rem] tracking-[0.5em] uppercase ${
+            dark ? "text-paper/50" : "text-muted-foreground"
+          }`}
+        >
+          {index}
+        </span>
+      ) : null}
+      <h2
+        className={`font-display mt-3 text-center text-5xl font-semibold tracking-tight md:text-6xl ${
+          dark ? "text-paper" : "text-ink"
+        }`}
+      >
+        {children}
+      </h2>
+      <span
+        aria-hidden="true"
+        className="mt-4 block h-[3px] w-24 -rotate-1 rounded-full bg-accent-warm"
+      />
+    </div>
   );
 }
+
 
 function ClipboardCard() {
   return (
