@@ -408,16 +408,24 @@ function Index() {
               ["Business Strategy", "w-[85%]"],
               ["Software", "w-[82%]"],
               ["Photography", "w-[80%]"],
-            ].map(([skill, width]) => (
+            ].map(([skill, width], i) => (
               <div key={skill}>
                 <div className="flex items-baseline justify-between">
                   <span className="font-hand text-3xl">{skill}</span>
+                  <span className="font-body text-[0.6rem] tracking-[0.35em] text-muted-foreground uppercase">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
                 </div>
                 <div className="mt-2 h-1.5 w-full rounded-full bg-ink/10">
                   <div className={`h-1.5 rounded-full bg-ink ${width}`} />
                 </div>
+                <span
+                  aria-hidden="true"
+                  className="mt-1 block h-[3px] w-8 -rotate-1 rounded-full bg-accent-warm"
+                />
               </div>
             ))}
+
           </div>
         </div>
       </section>
