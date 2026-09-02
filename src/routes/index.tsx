@@ -153,13 +153,21 @@ function Index() {
         />
         <div className="pointer-events-none absolute inset-0 bg-paper/25" />
         <div className="relative mx-auto flex max-w-4xl flex-col items-center px-6 py-24 text-center md:py-32">
-        <p className="font-hand text-4xl md:text-5xl">Welcome to my</p>
+        <span className="font-body text-[0.65rem] tracking-[0.5em] text-ink/60 uppercase">
+          Section 00 — Intro
+        </span>
+        <p className="font-hand mt-3 text-4xl md:text-5xl">Welcome to my</p>
         <h1 className="font-display mt-4 text-6xl font-bold tracking-tight md:text-8xl">
           Yash Gupta
         </h1>
+        <span
+          aria-hidden="true"
+          className="mt-5 block h-[3px] w-24 -rotate-1 rounded-full bg-accent-warm"
+        />
         <p className="font-body mt-6 text-xl text-muted-foreground md:text-2xl">
           Personal Portfolio — Engineering, Business &amp; Technology
         </p>
+
         <a
           href="#about"
           className="font-hand mt-12 text-3xl underline underline-offset-8 transition-opacity hover:opacity-60"
