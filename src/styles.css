@@ -58,7 +58,10 @@
   --input: oklch(0.88 0 0);
   --ring: oklch(0.5 0 0);
   --ink: oklch(0.08 0 0);
-  --paper: oklch(1 0 0);
+  --paper: oklch(0.985 0.006 85);
+  --accent-warm: oklch(0.78 0.13 65);
+  --grain-dot: oklch(0.08 0 0 / 0.07);
+
 }
 
 html {
@@ -88,3 +91,30 @@ html {
 @utility font-body {
   font-family: "EB Garamond", Georgia, serif;
 }
+
+/* subtle paper grain for light sections */
+@utility grain {
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.35;
+    background-image: radial-gradient(
+      var(--grain-dot) 1px,
+      transparent 1px
+    );
+    background-size: 4px 4px;
+  }
+}
+
+/* a piece of masking tape */
+@utility tape {
+  position: absolute;
+  width: 7rem;
+  height: 1.6rem;
+  background: color-mix(in oklab, var(--accent-warm) 55%, transparent);
+  box-shadow: 0 1px 2px oklch(0 0 0 / 0.15);
+}
+
