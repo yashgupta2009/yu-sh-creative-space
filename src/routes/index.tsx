@@ -40,15 +40,17 @@ function NavBar({ dark = false }: { dark?: boolean }) {
       className={
         dark
           ? "w-full bg-ink text-paper"
-          : "w-full border-b border-border bg-paper text-ink"
+          : "w-full border-y border-border bg-paper text-ink"
       }
     >
       <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-center gap-x-8 gap-y-2 px-6 py-4">
-        {NAV_ITEMS.map((item) => (
+        {NAV_ITEMS.map((item, i) => (
           <a
             key={item.href}
             href={item.href}
-            className="font-hand text-2xl transition-opacity hover:opacity-60"
+            className={`font-hand text-2xl transition-transform duration-200 hover:-translate-y-0.5 ${
+              i % 2 === 0 ? "hover:-rotate-3" : "hover:rotate-3"
+            }`}
           >
             {item.label}
           </a>
@@ -60,21 +62,39 @@ function NavBar({ dark = false }: { dark?: boolean }) {
 
 function SectionHeading({
   children,
+  index,
   dark = false,
 }: {
   children: React.ReactNode;
+  index?: string;
   dark?: boolean;
 }) {
   return (
-    <h2
-      className={`font-display text-center text-5xl font-semibold tracking-tight md:text-6xl ${
-        dark ? "text-paper" : "text-ink"
-      }`}
-    >
-      {children}
-    </h2>
+    <div className="flex flex-col items-center">
+      {index ? (
+        <span
+          className={`font-body text-[0.65rem] tracking-[0.5em] uppercase ${
+            dark ? "text-paper/50" : "text-muted-foreground"
+          }`}
+        >
+          {index}
+        </span>
+      ) : null}
+      <h2
+        className={`font-display mt-3 text-center text-5xl font-semibold tracking-tight md:text-6xl ${
+          dark ? "text-paper" : "text-ink"
+        }`}
+      >
+        {children}
+      </h2>
+      <span
+        aria-hidden="true"
+        className="mt-4 block h-[3px] w-24 -rotate-1 rounded-full bg-accent-warm"
+      />
+    </div>
   );
 }
+
 
 function ClipboardCard() {
   return (
@@ -203,12 +223,20 @@ function Index() {
       <NavBar />
 
       {/* Resume — white section */}
-      <section id="resume" className="bg-paper py-24">
-        <div className="mx-auto max-w-6xl px-6">
-          <SectionHeading>Resume</SectionHeading>
+      <section id="resume" className="grain bg-paper py-24">
+        <div className="relative mx-auto max-w-6xl px-6">
+          <SectionHeading index="Section 02">Resume</SectionHeading>
           <div className="mt-16 grid items-start gap-16 md:grid-cols-2">
             {/* resume image */}
-            <figure className="mx-auto w-full max-w-md">
+            <figure className="relative mx-auto w-full max-w-md">
+              <span
+                aria-hidden="true"
+                className="tape -top-3 left-6 -rotate-6"
+              />
+              <span
+                aria-hidden="true"
+                className="tape -top-3 right-6 rotate-6"
+              />
               <div className="rotate-[-1deg] border-2 border-ink bg-paper p-3 shadow-xl transition-transform hover:rotate-0">
                 <img
                   src={resumeAsset.url}
@@ -216,6 +244,7 @@ function Index() {
                   className="w-full"
                 />
               </div>
+
               <figcaption className="font-hand mt-6 text-center text-3xl">
                 my resume, hot off the press
               </figcaption>
@@ -313,7 +342,7 @@ function Index() {
       {/* Academics — black section */}
       <section id="academics" className="bg-ink py-24 text-paper">
         <div className="mx-auto max-w-6xl px-6">
-          <SectionHeading dark>Academic Experience</SectionHeading>
+          <SectionHeading index="Section 03" dark>Academic Experience</SectionHeading>
           <div className="mt-16 grid gap-10 md:grid-cols-3">
             {[
               {
@@ -352,9 +381,9 @@ function Index() {
       <NavBar />
 
       {/* Expertise — white section */}
-      <section id="expertise" className="bg-paper py-24">
+      <section id="expertise" className="grain bg-paper py-24">
         <div className="mx-auto max-w-6xl px-6">
-          <SectionHeading>Expertise</SectionHeading>
+          <SectionHeading index="Section 04">Expertise</SectionHeading>
           <div className="mx-auto mt-16 grid max-w-4xl gap-x-16 gap-y-10 md:grid-cols-2">
             {[
               ["Leadership & Teamwork", "w-[90%]"],
@@ -382,7 +411,7 @@ function Index() {
       {/* Creative — black section */}
       <section id="creative" className="bg-ink py-24 text-paper">
         <div className="mx-auto max-w-4xl px-6 text-center">
-          <SectionHeading dark>Creative Side</SectionHeading>
+          <SectionHeading index="Section 05" dark>Creative Side</SectionHeading>
           <p className="font-body mx-auto mt-10 max-w-2xl text-lg leading-relaxed text-paper/80">
             Photography and software let me explore both my logical and
             creative sides — capturing moments worth remembering and building
@@ -404,7 +433,7 @@ function Index() {
       <NavBar />
 
       {/* Contact — white section */}
-      <section id="contact" className="bg-paper py-24">
+      <section id="contact" className="grain bg-paper py-24">
         <div className="mx-auto max-w-3xl px-6 text-center">
           <p className="font-hand text-5xl">Let's connect!</p>
           <h2 className="font-display mt-4 text-5xl font-semibold md:text-6xl">
