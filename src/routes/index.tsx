@@ -376,12 +376,17 @@ function Index() {
                 tag: "Real-World Experience",
                 body: "Contributing ideas and strategies to real businesses — turning classroom concepts into solutions that make an impact.",
               },
-            ].map((card) => (
+            ].map((card, i) => (
               <article
                 key={card.title}
-                className="border-2 border-paper p-8 transition-transform hover:-translate-y-1"
+                className={`relative border-2 border-paper p-8 transition-transform hover:-translate-y-1 hover:rotate-0 ${
+                  i % 2 === 0 ? "rotate-[-1deg]" : "rotate-[1deg]"
+                }`}
               >
-                <p className="font-hand text-2xl">{card.tag}</p>
+                <span className="font-body text-[0.6rem] tracking-[0.4em] text-paper/50 uppercase">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <p className="font-hand mt-2 text-2xl text-accent-warm">{card.tag}</p>
                 <h3 className="font-display mt-2 text-2xl font-semibold">
                   {card.title}
                 </h3>
@@ -389,6 +394,7 @@ function Index() {
                   {card.body}
                 </p>
               </article>
+
             ))}
           </div>
         </div>
