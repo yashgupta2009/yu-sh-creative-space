@@ -223,12 +223,20 @@ function Index() {
       <NavBar />
 
       {/* Resume — white section */}
-      <section id="resume" className="bg-paper py-24">
-        <div className="mx-auto max-w-6xl px-6">
-          <SectionHeading>Resume</SectionHeading>
+      <section id="resume" className="grain bg-paper py-24">
+        <div className="relative mx-auto max-w-6xl px-6">
+          <SectionHeading index="Section 02">Resume</SectionHeading>
           <div className="mt-16 grid items-start gap-16 md:grid-cols-2">
             {/* resume image */}
-            <figure className="mx-auto w-full max-w-md">
+            <figure className="relative mx-auto w-full max-w-md">
+              <span
+                aria-hidden="true"
+                className="tape -top-3 left-6 -rotate-6"
+              />
+              <span
+                aria-hidden="true"
+                className="tape -top-3 right-6 rotate-6"
+              />
               <div className="rotate-[-1deg] border-2 border-ink bg-paper p-3 shadow-xl transition-transform hover:rotate-0">
                 <img
                   src={resumeAsset.url}
@@ -236,6 +244,7 @@ function Index() {
                   className="w-full"
                 />
               </div>
+
               <figcaption className="font-hand mt-6 text-center text-3xl">
                 my resume, hot off the press
               </figcaption>
