@@ -34,6 +34,8 @@
   --color-ring-offset-background: var(--background);
   --color-ink: var(--ink);
   --color-paper: var(--paper);
+  --color-accent-warm: var(--accent-warm);
+
 }
 
 :root {
