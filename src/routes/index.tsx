@@ -434,14 +434,21 @@ function Index() {
             ideas worth sharing.
           </p>
           <div className="mt-12 flex flex-wrap items-center justify-center gap-6">
-            {["Photography", "Software", "Building Things"].map((label) => (
+            {["Photography", "Software", "Building Things"].map((label, i) => (
               <div
                 key={label}
-                className="flex h-44 w-44 rotate-[-2deg] items-center justify-center border-2 border-ink bg-paper text-ink shadow-md transition-transform hover:rotate-0"
+                className={`relative flex h-44 w-44 items-center justify-center border-2 border-ink bg-paper text-ink shadow-md transition-transform hover:rotate-0 ${
+                  i % 2 === 0 ? "rotate-[-2deg]" : "rotate-[2deg]"
+                }`}
               >
+                <span
+                  aria-hidden="true"
+                  className="tape -top-3 left-1/2 -translate-x-1/2 -rotate-3"
+                />
                 <span className="font-hand text-3xl">{label}</span>
               </div>
             ))}
+
           </div>
         </div>
       </section>
