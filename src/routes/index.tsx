@@ -31,6 +31,7 @@ const NAV_ITEMS = [
   { label: "About me", href: "#about" },
   { label: "Resume", href: "#resume" },
   { label: "Academics", href: "#academics" },
+  { label: "Experiences", href: "#experiences" },
   { label: "Expertise", href: "#expertise" },
   { label: "Creative", href: "#creative" },
   { label: "Contact", href: "#contact" },
