@@ -1,10 +1,3 @@
-import ballBoysPreview from "@/assets/ball-boys-preview.png.asset.json";
-import marketExpoPreview from "@/assets/market-expo-preview.png.asset.json";
-import professionalPreview from "@/assets/professional-presentations-preview.png.asset.json";
-import ballBoysPdf from "@/assets/ball-boys-scaling.pdf.asset.json";
-import marketExpoPdf from "@/assets/market-expo-customer.pdf.asset.json";
-import professionalPdf from "@/assets/professional-presentations.pdf.asset.json";
-
 export type Project = {
   slug: string;
   number: string;
@@ -25,6 +18,19 @@ export type Project = {
   pdfUrl: string;
   /** PDF artifact label. */
   pdfLabel: string;
+  /** All presentation files available for this project. */
+  presentations?: Array<{
+    label: string;
+    url: string;
+    previewUrl: string;
+  }>;
+  category?: "academic" | "experience";
+  caseStudy?: {
+    process: string[];
+    automation: string;
+    testing: string;
+    drawingsUrl?: string;
+  };
 };
 
 export const PROJECTS: Project[] = [
@@ -47,9 +53,37 @@ export const PROJECTS: Project[] = [
       "Break-Even Analysis",
       "Data & Finance Leadership",
     ],
-    previewUrl: ballBoysPreview.url,
-    pdfUrl: ballBoysPdf.url,
-    pdfLabel: "Ball Boys — Scaling Project Presentation",
+    previewUrl: "/portfolio-assets/ball-boys-cover-1.jpg",
+    pdfUrl: "/portfolio-assets/ball-boys.pdf",
+    pdfLabel: "Ball Boys — Business Presentation",
+    presentations: [
+      {
+        label: "Ball Boys — Business Presentation",
+        url: "/portfolio-assets/ball-boys.pdf",
+        previewUrl: "/portfolio-assets/ball-boys-cover-1.jpg",
+      },
+      {
+        label: "Ball Boys — Market Day Presentation",
+        url: "/portfolio-assets/ball-boys-market-day.pdf",
+        previewUrl: "/portfolio-assets/ball-boys-market-day-cover-1.jpg",
+      },
+      {
+        label: "Ball Boys — Customer Presentation",
+        url: "/portfolio-assets/ball-boys-customer.pdf",
+        previewUrl: "/portfolio-assets/ball-boys-customer-cover-01.jpg",
+      },
+      {
+        label: "Ball Boys — Presentation 2.0",
+        url: "/portfolio-assets/ball-boys-presentation-2.pdf",
+        previewUrl: "/portfolio-assets/ball-boys-presentation-2-cover-01.jpg",
+      },
+      {
+        label: "Ball Boys — Business Strategy Presentation",
+        url: "/portfolio-assets/ball-boys-business-presentation.pdf",
+        previewUrl:
+          "/portfolio-assets/ball-boys-business-presentation-cover-01.jpg",
+      },
+    ],
   },
   {
     slug: "market-expo",
@@ -70,9 +104,9 @@ export const PROJECTS: Project[] = [
       "Point-of-Sale Handling",
       "Team Collaboration",
     ],
-    previewUrl: marketExpoPreview.url,
-    pdfUrl: marketExpoPdf.url,
-    pdfLabel: "Ball Boys — Market Expo Breakdown",
+    previewUrl: "/portfolio-assets/ball-boys-customer-cover-01.jpg",
+    pdfUrl: "/portfolio-assets/ball-boys-customer.pdf",
+    pdfLabel: "Ball Boys — Market Expo Customer Presentation",
   },
   {
     slug: "professional-presentations",
@@ -93,9 +127,60 @@ export const PROJECTS: Project[] = [
       "Presentation Design",
       "Strategic Storytelling",
     ],
-    previewUrl: professionalPreview.url,
-    pdfUrl: professionalPdf.url,
+    previewUrl:
+      "/portfolio-assets/ball-boys-business-presentation-cover-01.jpg",
+    pdfUrl: "/portfolio-assets/ball-boys-business-presentation.pdf",
     pdfLabel: "Professional Business Presentation",
+  },
+  {
+    slug: "engineering-drawbridge",
+    number: "04",
+    title: "Engineering Drawbridge",
+    subtitle: "Engineering Design & Automation | Engineering Year 2",
+    role: "Engineering Design · Bridge Construction · Prototyping & Testing · Problem Solving · Automation",
+    description:
+      "Worked with a team to design, build, and test an automated vertical-lift drawbridge that responds when a boat approaches.",
+    overview:
+      "In Engineering Concepts, my team designed a miniature drawbridge that could keep a roadway available for vehicles while creating safe clearance for a boat to pass underneath. We developed and tested ideas before selecting a vertical-lift design.",
+    contribution:
+      "Contributed to the bridge structure, lifting-system development, prototype testing, and design problem-solving as our team moved toward a working automated model.",
+    skills: [
+      "Engineering Design",
+      "Automation",
+      "Prototyping",
+      "Problem Solving",
+      "Structural Design",
+      "Programming",
+      "Testing",
+      "Teamwork",
+    ],
+    previewUrl: "/portfolio-assets/drawbridge-finished.png",
+    pdfUrl: "/portfolio-assets/drawbridge-final.pdf",
+    pdfLabel: "Automatic Drawbridge Portfolio",
+    category: "academic",
+    presentations: [
+      {
+        label: "Automatic Drawbridge Portfolio",
+        url: "/portfolio-assets/drawbridge-final.pdf",
+        previewUrl: "/portfolio-assets/drawbridge-sketch.png",
+      },
+    ],
+    caseStudy: {
+      process: [
+        "Research",
+        "Brainstorming",
+        "Prototype",
+        "Build",
+        "Program",
+        "Test",
+        "Final Design",
+      ],
+      automation:
+        "A sensor detected an approaching boat or object and sent a signal to activate the lifting system. The bridge deck raised between the support towers, then returned to its lowered position after the object cleared the sensor.",
+      testing:
+        "We compared lifting mechanisms and truss designs, then tested prototypes before selecting the final vertical-lift design. The finished model demonstrated the lift sequence and the structural ideas behind it.",
+      drawingsUrl: "/portfolio-assets/drawbridge-sketch.png",
+    },
   },
 ];
 

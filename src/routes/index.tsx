@@ -1,8 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Link } from "@tanstack/react-router";
-import resumeAsset from "../assets/resume.png.asset.json";
 import { PROJECTS } from "@/lib/projects";
-import portraitAsset from "../assets/yash-portrait.png.asset.json";
 import babyAsset from "../assets/baby-years.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
@@ -128,7 +126,7 @@ function ClipboardCard() {
           </p>
           <div className="mx-auto mt-5 h-36 w-28 overflow-hidden border-2 border-ink">
             <img
-              src={portraitAsset.url}
+              src="/portfolio-assets/yash-portrait.png"
               alt="Yash Gupta"
               className="h-full w-full object-cover"
             />
@@ -270,7 +268,7 @@ function Index() {
               />
               <div className="rotate-[-1deg] border-2 border-ink bg-paper p-3 shadow-xl transition-transform hover:rotate-0">
                 <img
-                  src={resumeAsset.url}
+                  src="/portfolio-assets/yash-resume.png"
                   alt="Yash Gupta's resume"
                   className="w-full"
                 />
@@ -370,46 +368,17 @@ function Index() {
 
       <NavBar dark />
 
-      {/* Academics — black section */}
+      {/* Academic Experiences — black section */}
       <section id="academics" className="grain-dark bg-ink py-24 text-paper">
         <div className="mx-auto max-w-6xl px-6">
-          <SectionHeading index="Section 03" dark>Academic Experience</SectionHeading>
-          <div className="mt-16 grid gap-10 md:grid-cols-3">
-            {[
-              {
-                title: "3DE by Junior Achievement",
-                tag: "Magnet Program",
-                body: "Solving real-world business challenges through case-based learning — developing leadership, teamwork, and problem-solving skills alongside working professionals.",
-              },
-              {
-                title: "Northview High School",
-                tag: "Senior",
-                body: "Building a strong academic foundation while pursuing my passion for engineering, business, and technology inside and outside the classroom.",
-              },
-              {
-                title: "Business Case Challenges",
-                tag: "Real-World Experience",
-                body: "Contributing ideas and strategies to real businesses — turning classroom concepts into solutions that make an impact.",
-              },
-            ].map((card, i) => (
-              <article
-                key={card.title}
-                className={`relative border-2 border-paper p-8 transition-transform hover:-translate-y-1 hover:rotate-0 ${
-                  i % 2 === 0 ? "rotate-[-1deg]" : "rotate-[1deg]"
-                }`}
-              >
-                <span className="font-body text-[0.6rem] tracking-[0.4em] text-paper/50 uppercase">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <p className="font-hand mt-2 text-2xl text-accent-warm">{card.tag}</p>
-                <h3 className="font-display mt-2 text-2xl font-semibold">
-                  {card.title}
-                </h3>
-                <p className="font-body mt-4 leading-relaxed text-paper/70">
-                  {card.body}
-                </p>
-              </article>
-
+          <SectionHeading index="Section 03" dark>Academic Experiences</SectionHeading>
+          <p className="font-body mx-auto mt-8 max-w-2xl text-center text-lg leading-relaxed text-paper/70">Project work completed through school programs, from business challenges to engineering design.</p>
+          <div className="mt-16 grid gap-10 md:grid-cols-2">
+            {PROJECTS.filter((project) => project.slug === "ball-boys" || project.category === "academic").map((project, i) => (
+              <Link key={project.slug} to="/experiences/$slug" params={{ slug: project.slug }} className={`group relative overflow-hidden border-2 border-paper bg-ink transition-transform hover:-translate-y-2 hover:rotate-0 ${i % 2 === 0 ? "rotate-[-1deg]" : "rotate-[1deg]"}`}>
+                <img src={project.previewUrl} alt={`${project.title} preview`} className="aspect-[16/8] w-full object-cover opacity-80 transition-opacity group-hover:opacity-100" />
+                <div className="p-7"><span className="font-body text-[0.65rem] tracking-[0.4em] text-paper/50 uppercase">{project.number} — Academic Project</span><p className="font-hand mt-2 text-2xl text-accent-warm">{project.subtitle}</p><h3 className="font-display mt-2 text-3xl font-semibold">{project.title}</h3><p className="font-body mt-4 leading-relaxed text-paper/70">{project.description}</p><span className="font-hand mt-6 block text-2xl">View Project →</span></div>
+              </Link>
             ))}
           </div>
         </div>
@@ -421,14 +390,10 @@ function Index() {
       <section id="experiences" className="grain bg-paper py-24">
         <div className="mx-auto max-w-6xl px-6">
           <SectionHeading index="Section 04">Experiences & Projects</SectionHeading>
-          <p className="font-body mx-auto mt-8 max-w-2xl text-center text-lg leading-relaxed text-muted-foreground">
-            A selection of case studies from my 3DE business work — each one
-            turned an idea into a real, measurable result. Click any project to
-            view the full presentation.
-          </p>
+          <p className="font-body mx-auto mt-8 max-w-2xl text-center text-lg leading-relaxed text-muted-foreground">A selection of business case studies and presentations. Click any project to view its full presentation.</p>
 
           <div className="mt-16 grid gap-10 md:grid-cols-2 lg:grid-cols-3">
-            {PROJECTS.map((project, i) => (
+            {PROJECTS.filter((project) => project.slug !== "ball-boys" && project.category !== "academic").map((project, i) => (
               <Link
                 key={project.slug}
                 to="/experiences/$slug"
