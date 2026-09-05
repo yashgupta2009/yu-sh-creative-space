@@ -39,12 +39,12 @@ function NavBar() {
         >
           ← Back to Portfolio
         </Link>
-        <Link
-          to="/#experiences"
+        <a
+          href="/#experiences"
           className="font-hand text-2xl transition-transform duration-200 hover:-translate-y-0.5 hover:rotate-3"
         >
           Experiences
-        </Link>
+        </a>
       </div>
     </nav>
   );
