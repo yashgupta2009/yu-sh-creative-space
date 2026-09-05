@@ -481,7 +481,7 @@ function Index() {
       {/* Expertise — white section */}
       <section id="expertise" className="grain bg-paper py-24">
         <div className="mx-auto max-w-6xl px-6">
-          <SectionHeading index="Section 04">Expertise</SectionHeading>
+          <SectionHeading index="Section 05">Expertise</SectionHeading>
           <div className="mx-auto mt-16 grid max-w-4xl gap-x-16 gap-y-10 md:grid-cols-2">
             {[
               ["Leadership & Teamwork", "w-[90%]"],
@@ -517,7 +517,7 @@ function Index() {
       {/* Creative — black section */}
       <section id="creative" className="grain-dark bg-ink py-24 text-paper">
         <div className="mx-auto max-w-4xl px-6 text-center">
-          <SectionHeading index="Section 05" dark>Creative Side</SectionHeading>
+          <SectionHeading index="Section 06" dark>Creative Side</SectionHeading>
           <p className="font-body mx-auto mt-10 max-w-2xl text-lg leading-relaxed text-paper/80">
             Photography and software let me explore both my logical and
             creative sides — capturing moments worth remembering and building
@@ -548,7 +548,7 @@ function Index() {
       {/* Contact — white section */}
       <section id="contact" className="grain bg-paper py-24">
         <div className="relative mx-auto max-w-3xl px-6 text-center">
-          <SectionHeading index="Section 06">Get In Touch</SectionHeading>
+          <SectionHeading index="Section 07">Get In Touch</SectionHeading>
           <p className="font-hand mt-6 text-4xl">Let's connect!</p>
 
           <p className="font-body mt-8 text-lg leading-relaxed text-muted-foreground">
