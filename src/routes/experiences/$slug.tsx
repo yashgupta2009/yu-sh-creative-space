@@ -50,37 +50,57 @@ function NavBar() {
   );
 }
 
-function PdfViewer({ url, label }: { url: string; label: string }) {
+function Artifacts({
+  url,
+  label,
+  previewUrl,
+}: {
+  url: string;
+  label: string;
+  previewUrl: string;
+}) {
   return (
     <div className="mt-10">
-      <div className="flex flex-wrap items-center justify-between gap-4">
-        <h3 className="font-display text-2xl font-semibold text-ink">
-          Project Artifacts
-        </h3>
-        <a
-          href={url}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="font-hand inline-block border-2 border-ink px-6 py-2 text-2xl transition-colors hover:bg-ink hover:text-paper"
-        >
-          View Full Presentation ↗
-        </a>
+      <h3 className="font-display text-2xl font-semibold text-ink">
+        Project Artifacts
+      </h3>
+      <span
+        aria-hidden="true"
+        className="mt-2 block h-[2px] w-12 -rotate-1 rounded-full bg-accent-warm"
+      />
+
+      <div className="mt-5 grid gap-6 md:grid-cols-[1fr_auto] md:items-center">
+        <figure className="relative overflow-hidden rounded-lg border-2 border-ink shadow-xl">
+          <img
+            src={previewUrl}
+            alt={`${label} — first page preview`}
+            loading="lazy"
+            className="w-full object-cover"
+          />
+          <figcaption className="font-body px-4 py-3 text-sm text-muted-foreground">
+            {label} — preview of the first page. Open the full presentation to
+            read every slide.
+          </figcaption>
+        </figure>
+
+        <div className="flex flex-col gap-3 md:w-64">
+          <a
+            href={url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-hand inline-block border-2 border-ink bg-ink px-6 py-3 text-center text-2xl text-paper transition-colors hover:bg-paper hover:text-ink"
+          >
+            View Full Presentation ↗
+          </a>
+          <a
+            href={url}
+            download
+            className="font-hand inline-block border-2 border-ink px-6 py-3 text-center text-2xl transition-colors hover:bg-ink hover:text-paper"
+          >
+            Download PDF ↓
+          </a>
+        </div>
       </div>
-      <p className="font-body mt-2 text-sm text-muted-foreground">
-        {label}
-      </p>
-      <div className="mt-4 overflow-hidden rounded-lg border-2 border-ink shadow-xl">
-        <iframe
-          src={`${url}#view=FitH`}
-          title={label}
-          className="h-[80vh] min-h-[600px] w-full bg-paper"
-          loading="lazy"
-        />
-      </div>
-      <p className="font-body mt-3 text-center text-sm text-muted-foreground">
-        Scroll within the frame above to read the full presentation, or open it
-        in a new tab for a larger view.
-      </p>
     </div>
   );
 }
@@ -174,8 +194,12 @@ function ProjectDetail() {
           </div>
         </div>
 
-        {/* PDF viewer / artifacts */}
-        <PdfViewer url={project.pdfUrl} label={project.pdfLabel} />
+        {/* Artifacts */}
+        <Artifacts
+          url={project.pdfUrl}
+          label={project.pdfLabel}
+          previewUrl={project.previewUrl}
+        />
       </section>
 
       {/* Footer nav */}
