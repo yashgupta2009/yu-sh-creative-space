@@ -21,7 +21,7 @@ export const Route = createFileRoute("/experiences/$slug")({
       ],
     };
   },
-  loader: ({ params }) => {
+  loader: ({ params }): { project: Project } => {
     const project = getProject(params.slug);
     if (!project) throw notFound();
     return { project };
@@ -89,7 +89,7 @@ function ProjectDetail() {
   const { project } = Route.useLoaderData();
   const next =
     PROJECTS[(PROJECTS.findIndex((p) => p.slug === project.slug) + 1) %
-      PROJECTS.length];
+      PROJECTS.length] ?? PROJECTS[0];
 
   return (
     <main className="min-h-screen bg-paper text-ink">
@@ -192,12 +192,12 @@ function ProjectDetail() {
               {next.number} — {next.title} →
             </span>
           </Link>
-          <Link
-            to="/#experiences"
+          <a
+            href="/#experiences"
             className="font-hand inline-block border-2 border-ink px-8 py-2 text-2xl transition-colors hover:bg-ink hover:text-paper"
           >
             Back to Experiences
-          </Link>
+          </a>
         </div>
       </footer>
     </main>
