@@ -86,10 +86,11 @@ function PdfViewer({ url, label }: { url: string; label: string }) {
 }
 
 function ProjectDetail() {
-  const { project } = Route.useLoaderData();
+  const { slug } = Route.useParams();
+  const project = getProject(slug)!;
   const next =
-    PROJECTS[(PROJECTS.findIndex((p) => p.slug === project.slug) + 1) %
-      PROJECTS.length] ?? PROJECTS[0];
+    PROJECTS[(PROJECTS.findIndex((p) => p.slug === slug) + 1) %
+      PROJECTS.length]!;
 
   return (
     <main className="min-h-screen bg-paper text-ink">
