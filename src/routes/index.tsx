@@ -417,6 +417,67 @@ function Index() {
 
       <NavBar />
 
+      {/* Experiences & Projects — white section */}
+      <section id="experiences" className="grain bg-paper py-24">
+        <div className="mx-auto max-w-6xl px-6">
+          <SectionHeading index="Section 04">Experiences & Projects</SectionHeading>
+          <p className="font-body mx-auto mt-8 max-w-2xl text-center text-lg leading-relaxed text-muted-foreground">
+            A selection of case studies from my 3DE business work — each one
+            turned an idea into a real, measurable result. Click any project to
+            view the full presentation.
+          </p>
+
+          <div className="mt-16 grid gap-10 md:grid-cols-2 lg:grid-cols-3">
+            {PROJECTS.map((project, i) => (
+              <Link
+                key={project.slug}
+                to="/experiences/$slug"
+                params={{ slug: project.slug }}
+                className={`group relative flex flex-col overflow-hidden border-2 border-ink bg-paper shadow-md transition-transform duration-300 hover:-translate-y-2 ${
+                  i % 2 === 0 ? "rotate-[-0.5deg]" : "rotate-[0.5deg]"
+                }`}
+              >
+                {/* preview */}
+                <div className="relative aspect-[4/3] overflow-hidden border-b-2 border-ink bg-ink">
+                  <img
+                    src={project.previewUrl}
+                    alt={`${project.title} presentation preview`}
+                    loading="lazy"
+                    className="h-full w-full object-cover opacity-90 transition-transform duration-500 group-hover:scale-105 group-hover:opacity-100"
+                  />
+                  <span className="font-display absolute left-4 top-3 text-6xl font-bold leading-none text-paper/80 mix-blend-difference">
+                    {project.number}
+                  </span>
+                </div>
+
+                {/* body */}
+                <div className="flex flex-1 flex-col p-6">
+                  <p className="font-body text-[0.6rem] tracking-[0.4em] text-muted-foreground uppercase">
+                    {project.subtitle}
+                  </p>
+                  <h3 className="font-display mt-2 text-2xl font-semibold text-ink">
+                    {project.title}
+                  </h3>
+                  <span
+                    aria-hidden="true"
+                    className="mt-3 block h-[2px] w-10 -rotate-1 rounded-full bg-accent-warm"
+                  />
+                  <p className="font-body mt-4 flex-1 leading-relaxed text-muted-foreground">
+                    {project.description}
+                  </p>
+
+                  <span className="font-hand mt-6 inline-flex items-center gap-2 text-2xl text-ink transition-transform group-hover:gap-3">
+                    View Project →
+                  </span>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <NavBar dark />
+
       {/* Expertise — white section */}
       <section id="expertise" className="grain bg-paper py-24">
         <div className="mx-auto max-w-6xl px-6">
