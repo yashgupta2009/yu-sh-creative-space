@@ -1,5 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Link } from "@tanstack/react-router";
 import resumeAsset from "../assets/resume.png.asset.json";
+import { PROJECTS } from "@/lib/projects";
 import portraitAsset from "../assets/yash-portrait.png.asset.json";
 import babyAsset from "../assets/baby-years.jpg.asset.json";
 
