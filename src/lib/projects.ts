@@ -53,35 +53,35 @@ export const PROJECTS: Project[] = [
       "Break-Even Analysis",
       "Data & Finance Leadership",
     ],
-    previewUrl: "/portfolio-assets/ball-boys-cover-1.jpg",
-    pdfUrl: "/portfolio-assets/ball-boys.pdf",
+    previewUrl: "portfolio-assets/ball-boys-cover-1.jpg",
+    pdfUrl: "portfolio-assets/ball-boys.pdf",
     pdfLabel: "Ball Boys — Business Presentation",
     presentations: [
       {
         label: "Ball Boys — Business Presentation",
-        url: "/portfolio-assets/ball-boys.pdf",
-        previewUrl: "/portfolio-assets/ball-boys-cover-1.jpg",
+        url: "portfolio-assets/ball-boys.pdf",
+        previewUrl: "portfolio-assets/ball-boys-cover-1.jpg",
       },
       {
         label: "Ball Boys — Market Day Presentation",
-        url: "/portfolio-assets/ball-boys-market-day.pdf",
-        previewUrl: "/portfolio-assets/ball-boys-market-day-cover-1.jpg",
+        url: "portfolio-assets/ball-boys-market-day.pdf",
+        previewUrl: "portfolio-assets/ball-boys-market-day-cover-1.jpg",
       },
       {
         label: "Ball Boys — Customer Presentation",
-        url: "/portfolio-assets/ball-boys-customer.pdf",
-        previewUrl: "/portfolio-assets/ball-boys-customer-cover-01.jpg",
+        url: "portfolio-assets/ball-boys-customer.pdf",
+        previewUrl: "portfolio-assets/ball-boys-customer-cover-01.jpg",
       },
       {
         label: "Ball Boys — Presentation 2.0",
-        url: "/portfolio-assets/ball-boys-presentation-2.pdf",
-        previewUrl: "/portfolio-assets/ball-boys-presentation-2-cover-01.jpg",
+        url: "portfolio-assets/ball-boys-presentation-2.pdf",
+        previewUrl: "portfolio-assets/ball-boys-presentation-2-cover-01.jpg",
       },
       {
         label: "Ball Boys — Business Strategy Presentation",
-        url: "/portfolio-assets/ball-boys-business-presentation.pdf",
+        url: "portfolio-assets/ball-boys-business-presentation.pdf",
         previewUrl:
-          "/portfolio-assets/ball-boys-business-presentation-cover-01.jpg",
+          "portfolio-assets/ball-boys-business-presentation-cover-01.jpg",
       },
     ],
   },
@@ -104,8 +104,8 @@ export const PROJECTS: Project[] = [
       "Point-of-Sale Handling",
       "Team Collaboration",
     ],
-    previewUrl: "/portfolio-assets/ball-boys-customer-cover-01.jpg",
-    pdfUrl: "/portfolio-assets/ball-boys-customer.pdf",
+    previewUrl: "portfolio-assets/ball-boys-customer-cover-01.jpg",
+    pdfUrl: "portfolio-assets/ball-boys-customer.pdf",
     pdfLabel: "Ball Boys — Market Expo Customer Presentation",
   },
   {
@@ -128,8 +128,8 @@ export const PROJECTS: Project[] = [
       "Strategic Storytelling",
     ],
     previewUrl:
-      "/portfolio-assets/ball-boys-business-presentation-cover-01.jpg",
-    pdfUrl: "/portfolio-assets/ball-boys-business-presentation.pdf",
+      "portfolio-assets/ball-boys-business-presentation-cover-01.jpg",
+    pdfUrl: "portfolio-assets/ball-boys-business-presentation.pdf",
     pdfLabel: "Professional Business Presentation",
   },
   {
@@ -154,15 +154,15 @@ export const PROJECTS: Project[] = [
       "Testing",
       "Teamwork",
     ],
-    previewUrl: "/portfolio-assets/drawbridge-finished.png",
-    pdfUrl: "/portfolio-assets/drawbridge-final.pdf",
+    previewUrl: "portfolio-assets/drawbridge-finished.png",
+    pdfUrl: "portfolio-assets/drawbridge-final.pdf",
     pdfLabel: "Automatic Drawbridge Portfolio",
     category: "academic",
     presentations: [
       {
         label: "Automatic Drawbridge Portfolio",
-        url: "/portfolio-assets/drawbridge-final.pdf",
-        previewUrl: "/portfolio-assets/drawbridge-sketch.png",
+        url: "portfolio-assets/drawbridge-final.pdf",
+        previewUrl: "portfolio-assets/drawbridge-sketch.png",
       },
     ],
     caseStudy: {
@@ -179,7 +179,7 @@ export const PROJECTS: Project[] = [
         "A sensor detected an approaching boat or object and sent a signal to activate the lifting system. The bridge deck raised between the support towers, then returned to its lowered position after the object cleared the sensor.",
       testing:
         "We compared lifting mechanisms and truss designs, then tested prototypes before selecting the final vertical-lift design. The finished model demonstrated the lift sequence and the structural ideas behind it.",
-      drawingsUrl: "/portfolio-assets/drawbridge-sketch.png",
+      drawingsUrl: "portfolio-assets/drawbridge-sketch.png",
     },
   },
 ];
