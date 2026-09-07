@@ -367,7 +367,7 @@ function Index() {
             {PROJECTS.filter((project) => ["ball-boys", "market-expo", "professional-presentations"].includes(project.slug)).map((project, i) => (
               <a
                 key={project.slug}
-                href={`/experiences/${project.slug}`}
+                href={`./experiences/${project.slug}`}
                 className={`group relative flex min-h-[760px] flex-col overflow-hidden border-[3px] border-ink bg-paper shadow-md transition-transform duration-300 hover:-translate-y-2 ${
                   i % 2 === 0 ? "rotate-[-0.5deg]" : "rotate-[0.5deg]"
                 }`}

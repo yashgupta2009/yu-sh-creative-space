@@ -21,7 +21,7 @@ function BallBoysPage() {
       <nav className="relative z-10 border-b border-border bg-paper">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
           <a href="/" className="font-hand text-2xl transition-opacity hover:opacity-60">← Back to Portfolio</a>
-          <a href="/drawbridge" className="font-hand text-2xl transition-opacity hover:opacity-60">Drawbridge Project →</a>
+          <a href={`${import.meta.env.BASE_URL}drawbridge`} className="font-hand text-2xl transition-opacity hover:opacity-60">Drawbridge Project →</a>
         </div>
       </nav>
 
@@ -43,7 +43,7 @@ function BallBoysPage() {
                 <h2 className="font-display mt-6 text-4xl font-semibold leading-tight">{project.title}</h2>
                 <span aria-hidden="true" className="mt-5 block h-[3px] w-16 -rotate-1 rounded-full bg-accent-warm" />
                 <p className="font-body mt-8 text-xl leading-[1.75] text-muted-foreground">{project.description}</p>
-                <a href={`/experiences/${project.slug}`} className="font-hand mt-auto inline-flex items-center gap-4 pt-10 text-3xl transition-transform hover:translate-x-2">View Project <span aria-hidden="true">→</span></a>
+                <a href={`${import.meta.env.BASE_URL}experiences/${project.slug}`} className="font-hand mt-auto inline-flex items-center gap-4 pt-10 text-3xl transition-transform hover:translate-x-2">View Project <span aria-hidden="true">→</span></a>
               </div>
             </article>
           ))}
